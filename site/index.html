@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EthSites: The Ethereum Wide Web</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/ft-syntax-highlight.min.css">
+    </head>
+    <body>
+        <div class="container">
+        <div class="mx-auto">
+            <h1 class="display-1">Welcome to a better web:</h1> 
+        </div>
+        <pre class="ft-syntax-highlight" data-syntax="js" data-syntax-theme="one-dark" data-showTooltips="true">
+        <code>
+            <span class="newline"></span><span class="comment">// Copy me!</span>
+            <span class="newline"></span><span class="keyword">var</span> <span class="identifier">bi</span><span class="operand">=</span> <span class="object">window</span>.<span class="property">prompt</span>(<span class="value">&quot;Enter site ID &#40;try 0?&#41;&quot;</span>); <span class="comment">// ID of website to fetch</span>
+            <span class="newline"></span><span class="object">window</span>.<span class="object">web3</span>.<span class="object">eth</span>.<span class="property">getCode</span>&#40;
+            <span class="newline"></span>   <span class="value">&quot;0x4CecEC099a5c8B554e6Ec0cdb7B7623f5016e20b&quot;</span>, <span class="comment">// Fetch the code that fetches webpages</span>
+            <span class="newline"></span>   &#40;<span class="identifier">e</span>,<span class="identifier">r</span>&#41; <span class="operand">=&gt;</span> {
+            <span class="newline"></span>       <span class="comment">// Hex string to list of ints</span>
+            <span class="newline"></span>       <span class="keyword">for</span>&#40;<span class="identifier">t</span><span class="operand">=</span><span class="object">r</span>.<span class="property">toString</span>&#40;&#41;,<span class="identifier">n</span><span class="operand">=</span><span class="value">&quot;&quot;</span>,<span class="identifier">o</span><span class="operand">=</span><span class="value">0</span>;<span class="object">o</span><span class="operand">&lt;</span><span class="object">t</span>.<span class="property">length</span>;<span class="identifier">o</span><span class="operand">+=</span><span class="value">2</span>&#41;
+            <span class="newline"></span>           <span class="identifier">n</span><span class="operand">+=</span><span class="identifier-class">String</span>.<span class="property">fromCharCode</span>&#40;<span class="identifier-native">parseInt</span>&#40;<span class="identifier">t</span>.<span class="property">substr</span>&#40;<span class="identifier">o</span>,<span class="value">2</span>&#41;,<span class="value">16</span>&#41;&#41;;
+            <span class="newline"></span>       <span class="comment">// Run code to fetch website</span>
+            <span class="newline"></span>       <span class="identifier-native">eval</span>&#40;<span class="identifier">n</span>.<span class="property">slice</span>&#40;<span class="value">1</span>&#41;&#41;;
+            <span class="newline"></span>   }
+            <span class="newline"></span>&#41;;
+        </code>
+        </pre>
+        <div class="alert alert-info" role="alert">
+            <p class="lead">
+                Assuming you have <a href="https://metamask.io/">metamask</a>, open a JavaScript console in Firefox or Chrome (Control + Shift + I) and paste the magic javascript above. Behold, as websites load from the blockchain!
+            </p>
+            <hr>
+            Note: make sure to log into metamask and connect to the main ethereum network.
+        </div>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <h1 class="display-2">
+                But... what even is this?
+            </h1>
+            <p>EthSites is a registry of websites stored on the Ethereum blockchain. The magic javascript above connects you to the Ethereum blockchain with the Metamask Firefox or Chrome extension and retrieves websites stored in our registry. If you change the index variable <code>bi</code> in the JavaScript above, you can view different websites in the registry. We've specifically made this JavaScript as short as we can. Dissidents can memorize it, people can tweet it, or <a href="http://www.cypherspace.org/adam/shirt/">wear it on a shirt!</a></p>
+
+            <div class="alert alert-info" role="alert">
+                Note: To see which indices are available, call the <code>numEntries()</code> method on the smart contract, and all values up to the returned value are valid.
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <h1 class="display-2">
+                But... why?
+            </h1>
+            <p>Cause it's cool, DUH! But also...</p>
+            <p>The Ethereum blockchain has some properties that make it interesting to use as for censorship resistance:</p>
+            <ul>
+                <li>It's decentralized</li>
+                <li>Has good uptime</li>
+                <li>There's a lot of money locked in it, so establishments that want to censor have to weigh the loss monetary value from blocking the chain.</li>
+            </ul>
+        </div>
+        
+        <br>
+
+        <div class="container">
+            <h1 class="display-4">
+                Who did this!?!?!
+            </h1>
+            <p>Tyler Kell (<a href="https://twitter.com/relyt29">@relyt29</a>), Drake Eidukas (<a href="https://twitter.com/drakeeidukas">@drakeeidukas</a>), Amy Masters, and Phil Daian (<a href="https://twitter.com/phildaian">@phildaian</a>).</p>
+            <p>Made with love at the <a href="http://initc3.org">IC3</a> Ethereum Bootcamp 2019.</p>
+        </div>
+
+        <div class="container">
+            <h1 class="display-5">
+                Source Code: See <a href="https://github.com/relyt29/EthSites">Github</a>
+            </h1>
+	    <div class="row">
+            	<div class="col-md-5"></div>
+		<div class="col-md-2">
+	    		<a href="https://github.com/relyt29/EthSites">
+				<img width="200px" src="./GitHub-Mark.png">
+			</a>
+		</div>
+            	<div class="col-md-5"></div>
+	    </div>
+	</div>
+
+    </body>
+</html>
