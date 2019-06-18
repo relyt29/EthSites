@@ -17,7 +17,7 @@ python upload.py --start-gas 8000000 -r "https://infura.io/v3/<some infura key>:
 
 The existing contract deployments are deployed on mainnet at [0x0e46d03b99aaa8b8cc093ffed5855b92d61f9609](https://etherscan.io/address/0x0e46d03b99aaa8b8cc093ffed5855b92d61f9609) for the Registry contract and [0x4CecEC099a5c8B554e6Ec0cdb7B7623f5016e20b](https://etherscan.io/address/0x4CecEC099a5c8B554e6Ec0cdb7B7623f5016e20b) for the Bootstrapper contract.
 
-The contracts are also on ropsten at [0x1cdb4edd89390a6c62496534de721050e3a00ab5](https://ropsten.etherscan.io/address/0x1cdb4edd89390a6c62496534de721050e3a00ab5) (Registry) and (https://ropsten.etherscan.io/address/0x2829e431812cc3947f8471084ae013af0017ecb9) (Bootstrapper).
+The contracts are also on ropsten at [0x1cdb4edd89390a6c62496534de721050e3a00ab5](https://ropsten.etherscan.io/address/0x1cdb4edd89390a6c62496534de721050e3a00ab5) (Registry) and [0x2829e431812cc3947f8471084ae013af0017ecb9](https://ropsten.etherscan.io/address/0x2829e431812cc3947f8471084ae013af0017ecb9) (Bootstrapper).
 
 If you wish to deploy this contract on your own private testnet, see deploy.py.
 
@@ -25,7 +25,7 @@ If you wish to deploy this contract on your own private testnet, see deploy.py.
 
 GPL 3.0 or later.
 
-##Authors
+## Authors
 
 This code was furiously written at the [IC3](https://www.initc3.org) [2019 Blockchain Boot Camp](https://www.initc3.org/events/2019-06-10-IC3-Blockchain-Boot-Camp.html).
 
