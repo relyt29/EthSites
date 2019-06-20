@@ -7,8 +7,8 @@ from eth_utils import (
     function_abi_to_4byte_selector,
 )
 import time, json
-#from web3 import Web3
-from web3.auto.infura import w3
+from web3 import Web3
+#from web3.auto.infura import w3
 import argparse
 import math
 import lzstring
@@ -76,8 +76,8 @@ def main():
     '''
 
     parser = _get_args()
-    #prov = Web3.HTTPProvider(parser.rpc_url) # not necessary if using infura
-    #w3 = Web3(prov)
+    prov = Web3.HTTPProvider(parser.rpc_url) # not necessary if using infura
+    w3 = Web3(prov)
 
     with open('./compiles/Registry.abi','r') as f:
         abi = json.loads(f.read())

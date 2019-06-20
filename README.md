@@ -13,6 +13,34 @@ We have provided a python script you can use to upload your own website to the E
 python upload.py --start-gas 8000000 -r "https://infura.io/v3/<some infura key>:443" "Some raw private key exported from metamask" "some deployed registry contract address such as 0x0e46..." mywebsite.html
 ```
 
+
+```
+(venv) ➜  EthSites git:(master) ✗ python upload.py -h 
+usage: upload.py [-h] [-r RPC_URL] [-t TIMEOUT] [--gas-price GAS_PRICE]
+                 [--start-gas START_GAS]
+                 key reg_addr filepath
+
+Tool to upload/store files to the Ethereum blockchain
+
+positional arguments:
+  key                   The Ethereum raw private key for the address that you wish to use to store with. This address must have enough money to store with.
+  reg_addr              The address of the registry contract stored on chain.
+  filepath              Path to file to upload.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r RPC_URL, --rpc-url RPC_URL
+                        The HTTP RPC Endpoint URL you wish to use.
+  -t TIMEOUT, --timeout TIMEOUT
+                        The timeout to wait, in seconds.
+  --gas-price GAS_PRICE
+                        Gas price to pay.
+  --start-gas START_GAS
+                        Amount of Gas to pay in Wei.
+(venv) ➜  EthSites git:(master) ✗ 
+```
+
+
 ## Contract Deployment
 
 The existing contract deployments are deployed on mainnet at [0x0e46d03b99aaa8b8cc093ffed5855b92d61f9609](https://etherscan.io/address/0x0e46d03b99aaa8b8cc093ffed5855b92d61f9609) for the Registry contract and [0x4CecEC099a5c8B554e6Ec0cdb7B7623f5016e20b](https://etherscan.io/address/0x4CecEC099a5c8B554e6Ec0cdb7B7623f5016e20b) for the Bootstrapper contract.
